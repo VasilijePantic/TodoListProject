@@ -11,20 +11,21 @@ Clicking on a button in the top right corner will automatically toggle between i
 
 
 Code example:
-.keypress/.which/.val/.append are methods I've used to write a Todo and add it's value as a text to the list. 
-		//adding a listener on input for new todos
-		$("input[type='text']").keypress(function(event){
-		//keypress event.which = 13. which is a keypress property to determen whick key is pressed
-		//in this case its "enter" or '13'
-			if(event.which === 13) {
-			//grabbing new todo text from input
-			var todoText = $(this).val()
-			//setting input to be empty
-			$(this).val("");
-			//create a new li and add to ul
-			//.append - give an element(ul in this case) an li with var todoText which is the value of the input
-			$("ul").append("<li><span><i class='fa fa-trash'></i></span>" + todoText + "</li>")
-				}	
-			});
+.keypress/.which/.val/.append are methods I've used to write a Todo and add it's value as a text to the list.
+ 
+//adding a listener on input for new todos
+$("input[type='text']").keypress(function(event){
+//keypress event.which = 13. which is a keypress property to determen whick key is pressed
+	//in this case its "enter" or '13'
+	if(event.which === 13) {
+	//grabbing new todo text from input
+	var todoText = $(this).val()
+	//setting input to be empty
+	$(this).val("");
+	//create a new li and add to ul
+	//.append - give an element(ul in this case) an li with var todoText which is the value of the input
+	$("ul").append("<li><span><i class='fa fa-trash'></i></span>" + todoText + "</li>")
+	}	
+	});
 
 This app is a separe project that combines jQuery,some moderate CSS styling and HTML into a whole, perfecty working app. This is a part of my learning process using Udemy's "Web Developer Bootcamp" course.
